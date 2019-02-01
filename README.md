@@ -20,7 +20,11 @@ example certbot config:
   authenticator = manual
   manual_public_ip_logging_ok = True
   manual_auth_hook = /home/ToinneGuust/scripts/versioletsencrypt.sh
-  manual-cleanup-hook = /home/ToinneGuust/scripts/versioletsencryptcleanup.sh
+  manual_cleanup_hook = /home/ToinneGuust/scripts/versioletsencryptcleanup.sh
   pref_challs = dns-01
   account = abcdefghijklmnopqrstuvwxyz123456
+```
+4. A simple entry in crontab can renew your certs automatically
+```
+@daily certbot renew
 ```
